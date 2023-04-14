@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery - each() 함수</title>
+    <script src="./js/jquery-3.6.4.js"></script>
+    <script>
+        // 익명 실행 함수
+        $(function(){
+            $('button').click(function(){
+                $("li").each(function(element){
+                    console.log(element);
+
+                    $("li").each(function(element){
+                        // console.log(element);
+                        let text = $(this).text();
+                        alert(text);
+                        // console.log($(this).text());
+                    })
+                });
+            });
+        })
+    </script>
+</head>
+<body>
+    <button type="button">알림창 실행</button>
+
+    <ul>
+        <li>coffee</li>
+        <li>mix</li>
+        <li>tea</li>
+        <li>soda</li>
+        <li>water</li>
+    </ul>
+</body>
+</html>
